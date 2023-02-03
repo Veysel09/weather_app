@@ -61,6 +61,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
 }
+
 /* SECTION #1
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .top-banner {
@@ -113,6 +114,7 @@ body {
   max-width: 450px;
   min-height: 40px;
 }
+
 /* SECTION #2
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .ajax-section {
@@ -175,6 +177,7 @@ body {
   width: 100px;
   height: 100px;
 }
+
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .page-footer {
