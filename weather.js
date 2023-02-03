@@ -50,3 +50,62 @@ const getWeatherDataFromApi = async () => {
         return;
       }
     }
+    //console.log(cityNameSpans);
+    const createdLi = document.createElement("li");
+    createdLi.classList.add("city");
+    createdLi.innerHTML = `<h2 class="city-name" data-name="${name}, ${
+      sys.country
+    }">
+                                <span>${name}</span>
+                                <sup>${sys.country}</sup>
+                            </h2>
+                            <div class="city-temp">${Math.round(
+                              main.temp
+                            )}<sup>°C</sup></div>
+                            <figure>
+                                <img class="city-icon" src="${iconUrl}">
+                                <figcaption>${
+                                  weather[0].description
+                                }</figcaption>
+                            </figure>`;
+    //append vs. prepend
+    list.prepend(createdLi);
+
+    //Capturing
+    // createdLi.addEventListener("click", (e)=>{
+    //     if(e.target.tagName == "IMG"){
+    //         e.target.src = (e.target.src == iconUrl) ? iconUrlAWS : iconUrl;
+    //     }
+    // });
+
+    //Bubbling
+    // createdLi.addEventListener("click", (e)=>{
+    //     alert(`LI element is clicked!!`);
+    //     window.location.href = "https://clarusway.com";
+    // });
+    // createdLi.querySelector("figure").addEventListener("click", (e)=>{
+    //     alert(`FIGURE element is clicked!!`);
+    //     //STOP BUBBLING
+    //     //e.stopPropagation();
+    //     // window.location.href = "https://clarusway.com";
+    // });
+    // createdLi.querySelector("img").addEventListener("click", (e)=>{
+    //     alert(`IMG element is clicked!!`);
+    //     // window.location.href = "https://clarusway.com";
+    // });
+  } catch (error) {
+    console.log(error);
+    msg.innerText = `404 (City Not Found)`;
+    setTimeout(() => {
+      msg.innerText = "";
+    }, 5000);
+  }
+  form.reset();
+};
+//window onload
+// document.querySelector(".cities").addEventListener("click", (e) => {
+//     if (e.target.tagName == "IMG") {
+//         alert("img is clicked!!!")
+//     }
+// }
+// )
