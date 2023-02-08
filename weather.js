@@ -58,6 +58,16 @@ const getWeatherDataFromApi = async () => {
     </figure>`;
 
     list.prepend(createdLi);
+
+    createdLi.addEventListener("click", (e) => {
+      if (e.target.tagName == "IMG") {
+        e.target.src = e.target.src == iconUrl ? iconUrlAWS : iconUrl;
+      }
+    });
+    createdLi.addEventListener("click", (e) => {
+      alert(`${e.target.tagName} elementi tiklandi!!`);
+      //  window.location.href = "https://asdfasfaf"
+    });
   } catch (error) {
     msg.innerText = `404 (CITY NOT FOUND)`;
     setTimeout(() => {
